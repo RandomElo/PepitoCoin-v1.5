@@ -1,0 +1,23 @@
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+}
+nav {
+    background-color: #94e800;
+}
+footer {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    padding: 5px 0;
+    width: 100%;
+    background-color: #94e800;
+    display: flex;
+    justify-content: center;
+}
+footer p {
+    margin: 0;
+    padding: 0;
+}
