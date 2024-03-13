@@ -49,7 +49,7 @@ app.all("*", (req, res) => {
 //Middkeware d'erreur globale
 app.use((err, req, res, next) => {
     console.error(err);
-    res.statuts(500).send("Erreur Serveur");
+    res.status(500).send("Erreur Serveur");
 });
 
 app.listen(port, () => console.log("Serveur démarré => port " + port));

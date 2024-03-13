@@ -5,9 +5,8 @@ import fichiers from "./fichiers.js";
 
 const router = express.Router();
 
-router.get("/utilisateurs", utilisateurs);
+router.use("/utilisateurs", utilisateurs);
 
-
-router.get("/", fichiers);
+router.use("/", fichiers);
 
 export default router;
