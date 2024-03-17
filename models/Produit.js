@@ -17,7 +17,7 @@ export default function (db) {
                 type: DataTypes.TEXT,
                 allowNull: false,
             },
-            nom_imaeg_produit: {
+            nom_image_produit: {
                 type: DataTypes.STRING(255),
                 allowNull: false,
             },

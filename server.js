@@ -3,8 +3,11 @@ import session from "express-session";
 import dotenv from "dotenv";
 import path from "path";
 import cors from "cors";
-//Importer le routeur et la database
+import bdd from './bdd/bdd.js'
 import router from "./routes/routes.js";
+
+import {accesibiliteBDD} from './middlewares/accesibiliteBDD.js'
+
 
 dotenv.config(); //Permet d'utiliser les variables d'environnement
 
@@ -23,6 +26,7 @@ app.use(
 app.use(express.json()); //Permet d'analyser le corps des requetes entrantes au format JSON
 app.use("/public", express.static(path.join(process.cwd(), "public/assets"))); //Permet de servir les fichiers disponible à l'adresse /public/assets à l'adresse /public
 app.set("view engine", "ejs"); //Permet de définir le moteur de vue
+app.use(accesibiliteBDD(bdd))
 
 app.use("/", router);
 

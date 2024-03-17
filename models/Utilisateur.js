@@ -1,10 +1,9 @@
 import { DataTypes } from "sequelize";
 import bcrypt from "bcrypt";
-import utilisateurs from "../routes/utilisateurs";
 
-export default function (d) {
-    const User = db.define(
-        "User",
+export default function (bdd) {
+    const Utilisateur = bdd.define(
+        "Utilisateurs",
         {
             id_utilisateur: {
                 type: DataTypes.INTEGER,
@@ -21,7 +20,7 @@ export default function (d) {
                 allowNull: false,
             },
             role_utilisateur: {
-                type: DataTypes.TINYINT,
+                type: DataTypes.TINYINT, //1: Admin, 2: Utilisateur
                 allowNull: false,
             },
             sexe_utilisateur: {
@@ -33,10 +32,11 @@ export default function (d) {
             tableName: "Utilisateurs",
         }
     );
-    utilisateurs.beforeCreate(async (user, options) => {
-        let hash = await bcrypt.hash(user.user_password, 10);
-        user.user_password = hash;
+    Utilisateur.beforeCreate(async (utilisateur, options) => {
+        let hash = await bcrypt.hash(utilisateur.mdp_utilisateur, 10);
+        utilisateur.user_password = hash;
     });
-    utilisateurs.verifMDP = async (mdp, original) => await bcrypt.compare(mdp, original);
-    return utilisateurs;
+    Utilisateur.verifMDP = async (mdp, original) => await bcrypt.compare(mdp, original);
+
+    return Utilisateur;
 }

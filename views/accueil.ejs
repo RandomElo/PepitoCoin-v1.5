@@ -1,3 +1,8 @@
 <%- include('./partials/tete.ejs',{titre: titre}) %>
-        <h1>Bienvenue sur <%= titre %></h1>
+<h1>Bienvenue sur <%= titre %></h1>
+<div class="divProduits">
+    <% produits.forEach(produit => { %>
+    <p><%= produit.nom_produit %></p>
+    <% }) %>
+</div>
 <%- include('./partials/pied.ejs') %>
