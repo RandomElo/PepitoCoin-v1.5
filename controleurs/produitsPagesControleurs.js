@@ -23,7 +23,7 @@ export const modificationProduit = async (req, res) => {
 
     req.Produit.findByPk(req.params.id).then((produit) => {
         if (produit) {
-            res.render("modifierProduit.ejs", { titre: "Modifier produit", css: "formProduit", script: "produit", cookieUtilisateur: req.cookies.utilisateur, produit  });
+            res.render("modifierProduit.ejs", { titre: "Modifier produit", css: "formProduit", script: "modifierProduit", cookieUtilisateur: req.cookies.utilisateur, produit  });
         } else {
             res.render("erreur.ejs", { titre: "Erreur 404", nomErreur: "produit inexistant", texteErreur: "Le produit n'existe pas dans la base de données", detailErreur: "", css: "erreur", script: "", cookieUtilisateur: req.cookies.utilisateur  });
         }
