@@ -1,0 +1,20 @@
+#divProduits {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.produit {
+    border: 1px solid black;
+    width: 30%;
+    text-align: center;
+}
+.produit > img{
+    width: 30%;
+}
+/* Responsive de la page */
+@media screen and (max-width: 850px) {
+    .produit {
+        width: 70%;
+    }
+}

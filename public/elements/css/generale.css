@@ -1,0 +1,221 @@
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+body {
+    margin-top: 54px;
+    margin-bottom: 50px;
+    overflow-x: hidden;
+    /* max-width: 100%; */
+}
+h1 {
+    text-align: center;
+}
+.gras {
+    font-weight: bold;
+}
+.bouton {
+    background-color: #94e800;
+    color: black;
+    border: 1px solid #94e800;
+    padding: 5px;
+    cursor: pointer;
+}
+.bouton:hover {
+    color: black;
+    border: 1px solid black;
+}
+#divErreur {
+    text-align: center;
+    color: red;
+}
+footer {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    padding: 5px 0;
+    width: 100%;
+    background-color: #94e800;
+    display: flex;
+    justify-content: center;
+    border-top: 1px dashed black;
+}
+footer p {
+    margin: 0;
+    padding: 0;
+}
+/* RESPONSIVE */
+@media screen and (max-width: 850px) {
+    h1 {
+        margin-top: 65px;
+    }
+}
+
+/* GESTION NAVBAR */
+a {
+    text-decoration: none;
+}
+ul {
+    margin-bottom: 0;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: normal;
+    box-sizing: border-box;
+    padding: 10px 30px;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.navLinks.mobile-menu {
+    margin-left: 0;
+}
+.navbar a {
+    color: black;
+}
+.navbar .navLinks ul {
+    display: flex;
+}
+.navbar .navLinks ul li {
+    margin: 0 20px;
+}
+.navbar .navLinks ul li a:hover {
+    text-decoration: underline;
+}
+.navbar .menuHamburger {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 45px;
+    cursor: pointer;
+}
+
+/*Gestion du sous-menus*/
+/*Définition du conteneur*/
+.navbar .navLinks .conteneurSousListe {
+    width: 110px;
+    margin-right: 0px;
+    cursor: pointer;
+}
+.navbar .conteneurSousListe:hover > ul {
+    display: block;
+}
+.navbar span {
+    font-size: 17px;
+}
+/*Définition du sous menus*/
+.navbar .navLinks .sousListe {
+    position: relative;
+    top: -2px;
+    left: -50px;
+    display: none;
+}
+.sousListe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/*Définition des items du sous mennus*/
+.itemsSousListe .boutonNav {
+    display: inline-block;
+    text-align: center;
+    width: 110px;
+    padding: 0 5px;
+    color: white;
+    background-color: black;
+    border-bottom: 2px solid gray;
+}
+.itemsSousListe .boutonNav:hover {
+    background: rgb(156, 156, 156);
+}
+
+/*RESPONSIVE*/
+@media screen and (max-width: 850px) {
+    .navbar {
+        padding: 15px;
+    }
+    .navbar .menuHamburger {
+        display: block;
+    }
+    .navbar .logo {
+        color: black;
+    }
+    .navLinks {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #94e800;
+        height: 100vh;
+        width: 100vw;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: -100%;
+        transition: all 0.5s ease;
+    }
+    .navLinks ul {
+        display: flex;
+        flex-direction: column;
+        padding-left: 0;
+    }
+    .navbar .navLinks ul li {
+        margin: 20px 0;
+    }
+    .navbar .navLinks ul li {
+        margin: 20px 0;
+        font-size: 1.2em;
+    }
+    .nomSousMenus {
+        cursor: pointer;
+    }
+    .navbar .navLinks .conteneurSousListe {
+        width: 130px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .navbar .navLinks .conteneurSousListe .sousListe {
+        display: none;
+        padding-left: 0;
+    }
+    .navbar .navLinks .sousListe {
+        display: block;
+        left: 0;
+        top: 0;
+    }
+    .navbar .navLinks ul li .boutonNav:hover {
+        text-decoration: none;
+    }
+    .itemsSousListe .boutonNav {
+        background-color: unset;
+        color: black;
+        font-size: 19px;
+        width: 120px;
+        border-bottom: none;
+        padding: 0;
+    }
+    .itemsSousListe .boutonNav:hover {
+        background-color: unset;
+    }
+    li.itemsSousListe {
+        height: 22px;
+    }
+    .dernierElement {
+        margin-bottom: 0 !important;
+    }
+}
+/* FIN GESTION NAVBAR */

@@ -1,0 +1,23 @@
+<%- include('./parties/tete.ejs',{titre: titre}) %>
+<h1 class="text-center">Mise en vente</h1>
+<form id="form">
+    <div class="divFormInput">
+        <label for="nomForm">Nom du produit :</label>
+        <input name="nom" id="nomForm" type="text" required />
+    </div>
+    <div id="divDesc">
+        <label for="descForm">Description du produit  :</label>
+        <textarea name="description" id="descForm" cols="30" rows="4"></textarea>
+    </div>
+    <div class="divFormInput">
+        <label for="prixForm">Prix du produit (en €)  :</label>
+        <input name="prix" id="prixForm" type="number" min="1" required />
+    </div>
+    <div id="divImg">
+        <label for="imgForm">Image du produit  :</label>
+        <input name="image" id="imgForm" type="file" accept="image/png, image/jpeg, image/jpg" required />
+    </div>
+    <div id="divErreur" class="mt-2"></div>
+    <button id="envoiBouton" class="bouton" type="submit">Publier</button>
+</form>
+<%- include('./parties/pied.ejs') %>

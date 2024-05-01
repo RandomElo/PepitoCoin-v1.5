@@ -1,0 +1,18 @@
+<%- include('./parties/tete.ejs') %>
+<h1 class="text-center">Bienvenue sur l'accueil</h1>
+<a href="/ajout-produit" id="boutonAjoutez" class="bouton mx-auto">Ajoutez un produit</a>
+<div id="divProduits" class="row">
+    <% if(produits.length !=0) { %>
+        <% produits.forEach(produit => { %>
+        <div class="produit pb-3">
+            <img src="/data/enregistrements/<%= produit.nom_image_produit %>" alt="Illustration <%= produit.nom_produit %>" class="my-2">
+            <p class="mb-2"><span class="gras">Nom :</span> <%= produit.nom_produit %></p>
+            <p class="mb-2 pb-2"><span class="gras">Prix :</span> <%= produit.prix_produit %> €</p>
+            <a href="/produit/<%= produit.id_produit %>" class="bouton mt-2">En savoir plus</a>
+        </div>
+        <% }) %>
+    <% } else { %>
+        <div id="panierVide"><p>Aucun produit n'est disponible</p></div>
+    <% } %>
+</div>
+<%- include('./parties/pied.ejs') %>

@@ -1,0 +1,23 @@
+<%- include('./parties/tete.ejs',{titre: titre}) %>
+<h1 class="text-center">Modifier un produit</h1>
+<form id="form" data-id="<%= produit.id_produit %>">
+    <div class="divFormInput">
+        <label for="nomForm">Nom du produit :</label>
+        <input name="nom" id="nomForm" type="text" value="<%= produit.nom_produit %>" required />
+    </div>
+    <div id="divDesc">
+        <label for="descForm">Description du produit  :</label>
+        <textarea name="description" id="descForm" cols="30" rows="4"><%= produit.description_produit %></textarea>
+    </div>
+    <div class="divFormInput">
+        <label for="prixForm">Prix du produit (en €)  :</label>
+        <input name="prix" id="prixForm" type="number" value="<%= produit.prix_produit %>" min="1" step="0.01" required />
+    </div>
+    <div id="divImg">
+        <label for="imgForm">Image du produit  :</label>
+        <input name="image" id="imgForm" type="file" accept="image/png, image/jpeg, image/jpg" />
+    </div>
+    <div id="divErreur" class="mt-2"></div>
+    <button id="envoiBouton" class="bouton" type="submit">Publier</button>
+</form>
+<%- include('./parties/pied.ejs') %>

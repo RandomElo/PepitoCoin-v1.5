@@ -1,0 +1,22 @@
+<%- include('./parties/tete.ejs',{titre: titre}) %>
+<% if (utilisation == "administrateur") { %>
+    <h1 class="text-center">Bienvenue sur la page de connexion administrateur</h1>
+<% } else { %>
+    <h1 class="text-center">Bienvenue sur la page de connexion</h1>
+<% } %>
+<form id="form" class="mx-auto">
+    <div id="psuedoForm" class="divForm">
+        <label for="pseudoForm">Pseudo :</label>
+        <input id="pseudoForm" name="pseudo_utilisateur" type="text" required />
+    </div>
+    <div class="mb-2 divForm">
+        <label for="mdpForm">Mot de passe :</label>
+        <input id="mdpForm" name="mdp_utilisateur" type="password" required />
+        <img src="/public/img/oeil.svg" alt="oeil mdp" id="voirMdp">
+    </div>
+    <div id="divErreur"></div>
+    <button type="submit" class="bouton">Connexion</button>
+</form>
+<script src="/public/js/<%= script %>.js"></script>
+<script src="/public/js/authentificatonGeneral.js"></script>
+<%- include('./parties/pied.ejs') %>

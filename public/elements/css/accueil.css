@@ -1,0 +1,36 @@
+#divProduits {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+}
+.produit {
+    border: 1px solid black;
+    width: 20%;
+    text-align: center;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+.produit > img {
+    width: 110px;
+    height: 110px;
+}
+#panierVide {
+    font-weight: bold;
+    color: red;
+}
+#boutonAjoutez {
+    display: block;
+    width: 145px;
+    margin-bottom: 5px;
+}
+/* Responsive de la page */
+@media screen and (max-width: 850px) {
+    #divProduits {
+        flex-direction: column;
+    }
+    .produit {
+        width: 70%;
+        margin-right: 0px;
+    }
+}

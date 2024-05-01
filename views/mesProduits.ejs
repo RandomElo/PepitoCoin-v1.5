@@ -1,0 +1,15 @@
+<%- include('./parties/tete.ejs',{titre: titre}) %>
+<h1 class="text-center">Mes produits</h1>
+<div id="divProduits">
+    <% mesProduits.forEach(produit => { %>
+        <div id="div_<%= produit.id_produit %>" class="produit mt-2 pb-3" data-id="<%= produit.id_produit %>">
+            <img src="/data/enregistrements/<%= produit.nom_image_produit %>" alt="Illustration <%= produit.nom_produit %>" class="my-2">
+            <p class="mb-2"><span class="gras">Nom :</span> <%= produit.nom_produit %></p>
+            <p class="mb-2 pb-2"><span class="gras">Prix :</span> <%= produit.prix_produit %> €</p>
+            <a href="/produit/<%= produit.id_produit %>/modifier" class="bouton mt-2">Modifier</a>
+            <a class="boutonSupprimer bouton mt-2">Supprimer</a>
+            <div id="divErreur"></div>
+        </div>
+    <% }) %>
+</div>
+<%- include('./parties/pied.ejs') %>

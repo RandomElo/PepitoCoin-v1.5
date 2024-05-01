@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/public/css/bootstrap.min.css" />
+        <!-- Permet la mise en page de la tete et du pied -->
+        <% if (css != "") { %>
+            <link rel="stylesheet" href="/public/css/<%= css  %>.css" />
+        <% } %>
+        <link rel="stylesheet" href="/public/css/generale.css" />
+        <link rel="shortcut icon" href="/public/img/favicon.ico" type="image/x-icon" />
+        <title><%= titre %> - PépitoCoin</title>
+    </head>
+    <body>
+        <header>
+            <% if(cookieUtilisateur) {%>
+                <nav class="navbar" data-connecte=true>
+            <% } else { %>
+                <nav class="navbar"   data-connecte=false>
+            <% }%>
+
+                <a class='logo' href="/">PépitoCoin</a>
+                <div class="navLinks">
+                    <ul>
+                        <% if(cookieUtilisateur) {%>
+                            <li><a href="/">Accueil</a></li>
+                            <li><a href="/ajout-produit">Ajoutez un produit</a></li>
+                            <!-- Sous menus -->
+                            <li class="conteneurSousListe">
+                                <a class="nomSousMenus">Mon compte</a>
+                                <span>&#9660;</span>
+                                <ul class="sousListe">
+                                    <li class="itemsSousListe"><a href="/mes-produits" class="boutonNav">Mes Produits</a></li>
+                                    <li class="itemsSousListe"><a  id="lienDeconnexion" class="dernierElement boutonNav">Déconnexion</a></li>
+                                </ul>
+                            </li>
+
+                        <% } else { %>
+                            <li><a href="/">Accueil</a></li>
+                            <li><a href="/ajout-produit">Ajoutez un produit</a></li>                            
+                            <li><a href="/connexion">Connexion</a></li>
+                            <li><a href="/inscription">Inscription</a></li>
+                        <% }%>
+                        <li><a href="/mon-panier">Panier : <span id="prixPanier">Chargement</span> €</a></li>
+                    </ul>
+                </div>
+                <img id="imageHamburger" class="menuHamburger" src="/public/img/menuHamburger.png" alt="Menu Hamburger" oncontextmenu="return false;">
+            </nav>
+        </header>

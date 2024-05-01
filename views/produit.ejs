@@ -1,0 +1,27 @@
+<%- include('./parties/tete.ejs',{titre: titre}) %>
+<h1 class="text-center">Bienvenue sur la page produit</h1>
+<div id="divProduit" data-id="<%= produit.id_produit  %>">
+    <img src="/data/enregistrements/<%= produit.nom_image_produit %>" alt="Image du  <%= produit.nom_produit  %>" id="imageProduit" />
+    <p id="nomProduit" class="mt-2"><span class="gras">Nom : </span><%= produit.nom_produit %></p>
+    <p id="prixProduit"><span class="gras">Prix : </span><%= produit.prix_produit %> €</p>
+    <p id="descriptionProduit"><span class="gras">Description : </span><%= produit.description_produit %></p>
+    <% if (mode == "proprietaire") { %>
+        <a href='/produit/<%= produit.id_produit  %>/modifier' class="bouton">Modifier le produit</a>
+        <a id="boutonSupprimer" class="bouton mt-2">Supprimer</a>
+
+    <% } else { %>
+        <div id="actions" class="text-center">
+            <div id="ajoutPanier" class="mb-4">
+                <div id="quantiteDiv" class="d-flex align-items-center justify-content-center">
+                    <p class="mb-1 me-2 gras">Quantité :</p>
+                    <input type="number" value="1" id="inputPanier" class="me-2" data-prixunite="<%= produit.prix_produit %>" min="1" />
+                </div>
+                <p class="mt-2"><span class="gras">Total : </span><span id="montantTotal"><%= produit.prix_produit %></span> €</p>
+                <div id="divErreur"></div>
+                <a id="ajouterPanier" class="bouton">Ajouter au panier</a>
+            </div>
+        </div>
+
+    <% } %>
+</div>
+<%- include('./parties/pied.ejs') %>

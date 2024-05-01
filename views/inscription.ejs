@@ -1,0 +1,17 @@
+<%- include('./parties/tete.ejs',{titre: titre}) %>
+<h1 class="text-center">Bienvenue sur la page d'inscription</h1>
+<form id="form" class="mx-auto">
+    <div class="divForm">
+        <label for="pseudoForm">Pseudo :</label>
+        <input id="pseudoForm" name="pseudo_utilisateur" type="text" required />
+    </div>
+    <div class="mb-2 divForm">
+        <label for="mdpForm">Mot de passe :</label>
+        <input id="mdpForm" name="mdp_utilisateur" type="password" required />
+        <img src="/public/img/oeil.svg" alt="oeil mdp" id="voirMdp" />
+    </div>
+    <div id="divErreur"></div>
+    <button type="submit" id="boutonSubmit" class="bouton">Enregistrer</button>
+</form>
+<script src="/public/js/authentificatonGeneral.js"></script>
+<%- include('./parties/pied.ejs') %>

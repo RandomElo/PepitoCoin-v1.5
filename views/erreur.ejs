@@ -1,0 +1,8 @@
+<%- include('./parties/tete.ejs',{titre: titre}) %>
+<h1 class="text-center">Erreur <%= nomErreur  %></h1>
+<p class="text-center"><%= texteErreur  %></p>
+<% if (detailErreur != "") { %>
+    <p class="text-center"><%= detailErreur %></p>
+<% } %>
+<a href="/" id="boutonAccueil" class="bouton d-flex mx-auto">Retour à l'accueil</a>
+<%- include('./parties/pied.ejs') %>

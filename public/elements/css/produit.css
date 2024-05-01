@@ -1,0 +1,12 @@
+#divProduit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#imageProduit {
+    width: 200px;
+}
+#inputPanier {
+    height:28px ;
+    padding-left: 2px;
+}
