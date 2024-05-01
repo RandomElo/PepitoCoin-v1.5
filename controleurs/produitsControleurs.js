@@ -5,6 +5,7 @@ export const enregistrement = (req, res) => {
         return res.json({ reponse: false, erreur: "cookie" });
     }
     if (!req.erreurFichier) {
+        console.log(req.body);
         //Cela veut dire qu'il y a pas eu de problème avec le MiME type
         req.Produit.create({
             nom_produit: req.body.nom,
