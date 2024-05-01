@@ -23,5 +23,4 @@ const bdd = {
 bdd.Utilisateur.hasMany(bdd.Produit, { foreignKey: "id_utilisateur" });
 bdd.Produit.belongsTo(bdd.Utilisateur, { foreignKey: "id_utilisateur" });
 
-
 export default bdd;
