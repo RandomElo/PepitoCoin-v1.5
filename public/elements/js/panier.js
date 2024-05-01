@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                     contenuProduit += /*html*/ `
                     <tr data-idproduit=${reponse.id}>
                         <td>${reponse.nom}</td>
-                        <td><input type="number" min="1" value="${produitSplit[1]}" class="inputQuantite" data-prixunite="${reponse.prix}"></td>
+                        <td><input type="text" min="1" value="${produitSplit[1]}" class="inputQuantite" data-prixunite="${reponse.prix}"></td>
                         <td>${reponse.prix} €</td>
                         <td>${prixTotal} €</td>
                         <td><img src="/public/img/poubelle.svg" alt="poubelle" class="supprimerElementPanier"></td>
