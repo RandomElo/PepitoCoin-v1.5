@@ -55,7 +55,7 @@ export const connexion = (req, res, next) => {
                     res.json({ mdpValide: false });
                 });
         } else {
-            res.json({ mdpValide: false });
+            res.json({ mdpValide: false, raison: "absent" });
         }
     });
 };

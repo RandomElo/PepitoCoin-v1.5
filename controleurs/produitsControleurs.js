@@ -1,8 +1,17 @@
 import fs from "fs";
 
 export const enregistrement = (req, res) => {
+    console.log(req.file.filename);
     if (!req.cookies.utilisateur) {
-        return res.json({ reponse: false, erreur: "cookie" });
+        const cheminFichier = "public/data/enregistrements/" + req.file.filename;
+        fs.unlink(cheminFichier, (erreur) => {
+            if (!erreur) {
+                res.json({ reponse: false, erreur: "cookie" });
+            } else {
+                console.error(erreur);
+                res.json({ modifier: false, raison: "mise a jour" });
+            }
+        });
     }
     if (!req.erreurFichier) {
         console.log(req.body);

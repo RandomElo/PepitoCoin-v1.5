@@ -23,7 +23,10 @@ document.querySelector("form").addEventListener("submit", async (e) => {
                         if (reponse.erreur == "MIME") {
                             document.querySelector("#divErreur").innerHTML = /*html*/ `<p>Le fichier doit être en .pnj, .jpeg ou .jpg</p>`;
                         } else if (reponse.erreur == "cookie") {
-                            window.location.href = `/`;
+                            document.querySelector("#divErreur").innerHTML = /*html*/ `<p>Vous n'êtes pas authentifié</p>`;
+                            setTimeout(() => {
+                                window.location.href = `/connexion`;
+                            }, 3000);
                         } else {
                             document.querySelector("#divErreur").innerHTML = /*html*/ `<p>Une erreur c'est produite</p>`;
                         }

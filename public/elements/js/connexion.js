@@ -13,10 +13,11 @@ document.querySelector("form").addEventListener("submit", async (e) => {
     });
     if (requete.ok) {
         const reponse = await requete.json();
-        if (reponse.connecte) {
+        if (reponse.mdpValide) {
             window.location.href = "/mes-produits";
         } else {
-            if (reponse.mdpIncorrect) {
+            if ((reponse.raison = "absent")) {
+                window.location.href = "/inscription";
             } else {
                 document.querySelector("#divErreur").innerHTML = /*html*/ `<p>Une erreur est survenu lors de l'enregistrement</p>`;
             }
